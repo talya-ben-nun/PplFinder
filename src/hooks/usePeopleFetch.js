@@ -18,3 +18,4 @@ export const usePeopleFetch = () => {
 
   return { users, isLoading, fetchUsers };
 };
+
