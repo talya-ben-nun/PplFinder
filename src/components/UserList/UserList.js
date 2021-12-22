@@ -10,8 +10,8 @@ import { useState, useEffect } from "react";
 
 const UserList = ({ users, isLoading }) => {
   const [hoveredUserId, setHoveredUserId] = useState();
-  const [checkedCountry, setCheckedCountry] = useState({BR: false, AU: false,CA: false, DE: false});
-  const [country, setCountry] = useState({Brazil: "BR", Australia: "AU", Canada: "CA", Germany: "DE"});
+  const [checkedCountry, setCheckedCountry] = useState({BR: false, AU: false,CA: false, DE: false, NO: false});
+  const [country, setCountry] = useState({Brazil: "BR", Australia: "AU", Canada: "CA", Germany: "DE", Norway : "NO"});
   const [check,setCheck]=useState(0);
   const [favorites, setFavorites] = useState([]);
   
@@ -87,6 +87,7 @@ const UserList = ({ users, isLoading }) => {
         <CheckBox value="AU" label="Australia" onChange={handleChange} isChecked={checkedCountry.AU}/>
         <CheckBox value="CA" label="Canada" onChange={handleChange} isChecked={checkedCountry.CA}/>
         <CheckBox value="DE" label="Germany" onChange={handleChange} isChecked={checkedCountry.DE}/>
+        <CheckBox value="NO" label="Norway" onChange={handleChange} isChecked={checkedCountry.NO}/>
       </S.Filters>
       <S.List>
         {users.filter(getUser).map((user, index) => {
