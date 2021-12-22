@@ -12,7 +12,6 @@ const NavBar = () => {
     setValue(newValue);
   };
   
-
   return (
     <AppBar position="static" color="transparent" style={{ position: "fixed", top: 0 }}>
       <Tabs
