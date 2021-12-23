@@ -49,9 +49,10 @@ const UserList = ({ users, isLoading }) => {
 
   const getIsVisible=(user)=>
   {
-    //console.log(user);
-    if(user === hoveredUserId || favorites.includes(user))
-      return true;
+    if(favorites){
+      if(user === hoveredUserId || favorites.includes(user))
+        return true;
+    }
     return false;
   };
 
@@ -117,7 +118,6 @@ const UserList = ({ users, isLoading }) => {
                   </IconButton>
                 </S.IconButtonWrapper>
               </S.User>
-              
             );
             })}
         {isLoading && (
