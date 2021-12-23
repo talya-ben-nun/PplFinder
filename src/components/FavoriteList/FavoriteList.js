@@ -92,6 +92,7 @@ const FavoriteList = ({ isLoading }) => {
       </S.FavoriteList>
     );
   };
+  return null;
 }
 
 export default FavoriteList;
