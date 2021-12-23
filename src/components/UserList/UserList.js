@@ -49,10 +49,10 @@ const UserList = ({ users, isLoading }) => {
 
   const getIsVisible=(user)=>
   {
-    if(favorites){
+    
       if(user === hoveredUserId || favorites.includes(user))
         return true;
-    }
+  
     return false;
   };
 
