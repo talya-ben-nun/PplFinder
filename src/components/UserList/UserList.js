@@ -27,15 +27,20 @@ const UserList = ({ users, isLoading }) => {
 
 
    const handleMouseClick = (user) => {
-    let ind = favorites.indexOf(user);
-    if(ind> -1)
-    {
-      setFavorites(favorites.slice(0,ind).concat(favorites.slice(ind+1)));
+    if(favorites){
+      let ind = favorites.indexOf(user);
+      if(ind> -1)
+      {
+        setFavorites(favorites.slice(0,ind).concat(favorites.slice(ind+1)));
+      }
+      else
+      {
+        //localStorage.setItem("favorites",JSON.stringify(favorites));
+        setFavorites([...favorites, user]);
+      }
     }
-    else
-    {
-      //localStorage.setItem("favorites",JSON.stringify(favorites));
-      setFavorites([...favorites, user]);
+    else{
+      setFavorites([user]);
     }
   };
 
@@ -49,10 +54,10 @@ const UserList = ({ users, isLoading }) => {
 
   const getIsVisible=(user)=>
   {
-    
+    if(favorites){
       if(user === hoveredUserId || favorites.includes(user))
         return true;
-  
+    }
     return false;
   };
 
